@@ -1,0 +1,9 @@
+{
+  "seller": {
+    "id":1,  
+    "lotteryId":1,
+    "award": "一等奖", 
+    "winNum": 3, 
+    "prize": "iphone xs max"
+  }
+}
