@@ -87,6 +87,7 @@ export default {
     saveData(obj) {
       this.key = false
       indexModel.saveData(obj).then(res => {
+        console.log(889,this.res)
         if(res.data.status == 1) {
           this.showTips('录入成功')
           this.key = true
@@ -116,7 +117,6 @@ export default {
         this.obj.shopName = this.list[0]
         this.obj.dealerName = this.list[1]
         this.obj.username = this.list[2]
-        // console.log('gao',this.obj.phone)
         this.obj.prizeType = 'caliya321'
         console.log(123123, this.obj)
         let arr = Object.keys(this.obj);
@@ -124,7 +124,7 @@ export default {
         if(len >= 7) {
           if(this.key) {
             this.saveData(this.obj)
-            console.log(1111,this.obj)
+            console.log(1199,this.obj)
           }
         }
       } else {
