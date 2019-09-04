@@ -21,7 +21,7 @@
               :myType='item.type'/>
           </li>
         </ul>
-        <button class="btn" @click="submitData"></button>
+        <button class="btn" @click="submitData" ></button>
       </div>
     </div>
     <div class="footer"></div>
@@ -90,7 +90,8 @@ export default {
         if(res.data.status == 1) {
           this.showTips('录入成功')
           this.key = true
-        }else {
+        }
+        else {
           this.key = true
           this.showWarnTips(res.data.msg)
         }
@@ -115,6 +116,7 @@ export default {
         this.obj.shopName = this.list[0]
         this.obj.dealerName = this.list[1]
         this.obj.username = this.list[2]
+        // console.log('gao',this.obj.phone)
         this.obj.prizeType = 'caliya321'
         console.log(123123, this.obj)
         let arr = Object.keys(this.obj);
@@ -122,6 +124,7 @@ export default {
         if(len >= 7) {
           if(this.key) {
             this.saveData(this.obj)
+            console.log(1111,this.obj)
           }
         }
       } else {
@@ -130,13 +133,16 @@ export default {
     },
     //验证手机号码
     testPhoneVal() {
-      let phone = this.list[3]
+      console.log(this.list)
+      let phone = this.list[2]
+      console.log(this.list[2],phone,testPhone(phone))
       if(testPhone(phone)) {
         this.obj.phone = phone
         this.testInputData()
         // this.checkInputData(i)
       }else {
         this.showWarnTips('请输入正确手机号')
+        console.log('触发')
       }
     },
     //判断哪个输入框没填
@@ -150,7 +156,7 @@ export default {
           time += 1
         }
       }
-      if(time == 4) {
+      if(time == 3) {
         // if(this.radioVal === ''){
         //   this.showWarnTips('请选择订单类型')
         // }else {
@@ -186,13 +192,15 @@ export default {
       if(i == 0) {
         this.showWarnTips('请输入门店名称')
         return
+      //取消经销商姓名
       }else if(i == 1) {
         this.showWarnTips('请输入经销商姓名')
         return
-      }else if(i == 2) {
-        this.showWarnTips('请输入客户姓名')
-        return
       }
+      // else if(i == 2) {
+      //   this.showWarnTips('请输入客户姓名')
+      //   return
+      // }
     },
     //判断单选框显示title
     getTitle(val) {

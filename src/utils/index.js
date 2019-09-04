@@ -59,18 +59,18 @@ class IndexModel extends Request {
     })
   }
   // 获取用户unionid
-  getUnionId(code) {
+  getUnionId (code) {
     return this.getData({
       url: this.baseUrl + '/api/public/v1/getWxAccessToken',
       params: {
-        code:code,
-        appId:'wx877a7e37b0de0a87',
-        timestamp:getTimestamp(), 
+        code: code,
+        appId: 'wx877a7e37b0de0a87',
+        timestamp: getTimestamp()
       }
     })
   }
   // 转盘抽奖后保存信息
-  rotateSaveInfo(unionId, type) {
+  rotateSaveInfo (unionId, type) {
     return this.getPostData({
       url: this.testUrl + '/api/lotteryuser/v1/saveturntable',
       data: {
@@ -82,7 +82,7 @@ class IndexModel extends Request {
     })
   }
   // 获取用户信息
-  rotateGetInfo(unionId) {
+  rotateGetInfo (unionId) {
     return this.getData({
       url: this.testUrl + '/api/lotteryuser/v1/turntable',
       params: {
