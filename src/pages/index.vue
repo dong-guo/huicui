@@ -185,7 +185,7 @@ export default {
         // this.status = true
         // this.radioVal = ''
         window.location.reload()
-      }, 1000);
+      }, 4000);
     },
     //判断是哪个输入框没填
     checkInputData(i) {
