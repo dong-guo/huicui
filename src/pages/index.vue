@@ -7,7 +7,7 @@
         <p>{{ Title }}</p>
         <ul>
         <div class="title">
-        <p>客户信息录入</p>  
+        <p>入场信息登记</p>  
       </div>
       <p class="text">请录入信息<p>
           <li class="selectCity">
