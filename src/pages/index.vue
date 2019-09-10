@@ -49,10 +49,10 @@ export default {
   data() {
     return {
       text: [
-        {name: '请输入公司', type: 'text', maxLength:'20'},
+        // {name: '公司 (company)', type: 'text', maxLength:'20'},
         //{name: '请输入门店名称', type: 'text', maxLength:'20'},
-        {name: '请输入姓名', type: 'text', maxLength:'20'},
-        {name: '请输入手机', type: 'number', maxLength:'11'}
+        {name: '姓名 (Name)', type: 'text', maxLength:'20'},
+        {name: '手机 (Mobile)', type: 'number', maxLength:'11'}
       ],
       Title:'',
       title: [
@@ -116,7 +116,7 @@ export default {
         this.obj.province = val.province
         this.obj.shopName = this.list[0]
         this.obj.dealerName = this.list[1]
-        this.obj.username = this.list[2]
+        this.obj.username = this.list[0]
         this.obj.prizeType = 'caliya321'
         console.log(123123, this.obj)
         let arr = Object.keys(this.obj);
@@ -134,8 +134,8 @@ export default {
     //验证手机号码
     testPhoneVal() {
       console.log(this.list)
-      let phone = this.list[2]
-      console.log(this.list[2],phone,testPhone(phone))
+      let phone = this.list[1]
+      console.log(this.list[1],phone,testPhone(phone))
       if(testPhone(phone)) {
         this.obj.phone = phone
         this.testInputData()
@@ -156,7 +156,7 @@ export default {
           time += 1
         }
       }
-      if(time == 3) {
+      if(time == 2) {
         // if(this.radioVal === ''){
         //   this.showWarnTips('请选择订单类型')
         // }else {
@@ -193,7 +193,8 @@ export default {
         this.showWarnTips('请输入门店名称')
         return
       //取消经销商姓名
-      }else if(i == 1) {
+      }
+      else if(i == 1) {
         this.showWarnTips('请输入经销商姓名')
         return
       }

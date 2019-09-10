@@ -3,7 +3,7 @@
     <ul>
     <li class="pickerContainer" @touchmove="handleTouchmove" >
       <div @click="changeSelect" class="select">
-        <span>{{ `${obj.province}` != 'undefined'? `${obj.province}  ${obj.city}  ${obj.area}` : '请选择城市'}} </span>
+        <span>{{ `${obj.province}` != 'undefined'? `${obj.province}  ${obj.city}  ${obj.area}` : '地址 (Address)'}} </span>
         <div class="pullDown" ></div>
       </div>
       <mt-popup
